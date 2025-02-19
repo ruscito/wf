@@ -6,6 +6,14 @@
 static char input[MAX_CMD];
 static int running = 1;
 
+int print_command_help()
+{
+    printf("Available commands:\n");
+    printf("  help  - Show this message\n");
+    printf("  exit  - Exit program\n");
+    return 1;
+}
+
 int process_prompt(int varg, char **argc)
 {
     printf("varg %d\n", varg);
@@ -19,7 +27,8 @@ int process_prompt(int varg, char **argc)
 int process_command(char cmd[MAX_CMD]) 
 {
     if (strcmp(cmd, "exit") == 0 || strcmp(cmd, "quit") == 0) return 0;
-    return 1;
+
+    return print_command_help();
 }
 
 
