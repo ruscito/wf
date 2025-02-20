@@ -14,3 +14,6 @@ wf.o: wf.c wf.h
 
 clean:
 	rm -f *.o wf
+
+run: wf
+	./wf
